@@ -1,0 +1,109 @@
+header {
+    overflow: hidden;
+    background-color: #2e3235;
+    
+}
+
+.heading {
+    color: #fcfdfe;
+    font-family: "marvin", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.5rem;
+    padding: 15px 10px 15px 30px;
+    
+}
+
+.nav_bar {
+    display: flex;
+    padding: 15px;
+    gap: 10px;
+}
+
+.search_bar {
+    width: 50%;
+}
+
+
+.search_bar_input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #6e767e;
+    font-family: "dm-sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #fcfdfe;
+    font-size: 20px;
+    border-radius: 30px;
+
+    background-image: url('SEARCH.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding-left: 50px;
+    background-size: 25px;
+}
+
+
+.drop_down_btn {
+    background-color: #6e767e;
+    color: #fcfdfe;
+    font-size: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 30px;
+    text-align: left;
+    min-width: 200px;
+
+    background-image: url('FILTER.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding-left: 50px;
+    background-size: 25px;
+}
+
+.drop_down_content {
+    display: none;
+    position: absolute;
+    background-color: #6e767e;
+    min-width: 200px;
+}
+
+
+.shop_btn {
+    background: none;
+    background-color: #6e767e;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    
+}
+
+.shop_btn img {
+    width: 35px;
+    height: 25px;
+}
+
+.history_btn {
+    background: none;
+    background-color: #6e767e;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    
+}
+
+.history_btn img {
+    width: 30px;
+    height: 30px;
+}
