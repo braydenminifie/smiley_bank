@@ -107,3 +107,103 @@ header {
     width: 30px;
     height: 30px;
 }
+
+
+.piggy_bank_grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto auto;
+    gap: 1em;
+    padding: 30px;
+}
+
+.piggy_bank_instance {
+    background-image: url('piggybank_green.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0px 50px;
+
+    height: 300px;
+    width: 331.6px;
+
+    display: flex;
+    position: relative;
+}
+
+.delete_student_btn {
+    background: none;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    width: 20px;
+    padding: 20px 0px 0px 10px;
+}
+
+.delete_student_btn img {
+    height: 20px;
+    width: 20px;
+}
+
+.piggy_bank_name {
+    color: #2e3235;
+    font-family: "marvin", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    padding: 2px 10px 15px 20px; 
+    justify-content: center;
+    align-items: center;
+
+    max-width: 190px;
+    height: 30px;
+}
+
+
+.add_smile_btn {
+    background: none;
+    background-color: #6e767e;
+
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    
+    margin-top: auto;
+    margin-left: auto;
+}
+
+.add_smile_btn img {
+    height: 20px;
+    width: 20px;
+}
+
+.remove_smile_btn {
+    background: none;
+    background-color: #6e767e;
+
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     flex-shrink: 0;
+
+    margin-top: auto;
+    margin-left: auto;
+}
+
+.remove_smile_btn img {
+    height: 10px;
+    width: 20px;
+}
