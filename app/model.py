@@ -1,9 +1,9 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, Sequence, create_engine
 from sqlalchemy.orm import sessionmaker, relationship, declarative_base
 
-#engine = create_engine('sqlite:///orm.db')
-#Session = sessionmaker(bind=engine)
-#session = Session()
+engine = create_engine('sqlite:///orm.db')
+Session = sessionmaker(bind=engine)
+session = Session()
 Base = declarative_base()
 
 class Student(Base):
@@ -18,5 +18,5 @@ class Student(Base):
         self.smiles = smiles
 
 
-#Base.metadata.create_all(engine)
+Base.metadata.create_all(engine)
 

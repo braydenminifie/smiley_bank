@@ -37,7 +37,7 @@ header {
     font-size: 20px;
     border-radius: 30px;
 
-    background-image: url('SEARCH.png');
+    background-image: url('../SEARCH.png');
     background-position: 10px 10px;
     background-repeat: no-repeat;
     padding-left: 50px;
@@ -55,7 +55,7 @@ header {
     text-align: left;
     min-width: 200px;
 
-    background-image: url('FILTER.png');
+    background-image: url('../FILTER.png');
     background-position: 10px 10px;
     background-repeat: no-repeat;
     padding-left: 50px;
@@ -118,7 +118,7 @@ header {
 }
 
 .piggy_bank_instance {
-    background-image: url('piggybank_green.png');
+    background-image: url('../piggybank_green.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 0px 50px;
