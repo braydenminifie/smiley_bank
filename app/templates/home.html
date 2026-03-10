@@ -41,107 +41,21 @@
 
 
         <div class = "piggy_bank_grid">
-            <div class = piggy_bank_instance>
-                <button class = delete_student_btn>
-                    <img src="../static/X_pig.png" alt="Delete Student Button">
-                </button>
-
-                <div class = piggy_bank_name>Student_name</div>
-
-                <button class = add_smile_btn>
-                    <img src="../static/PLUS_pig.png" alt="Add Smile Button">
-                </button>
-                <button class = remove_smile_btn>
-                    <img src="../static/MINUS_pig.png" alt="Remove Smile Button">
-                </button>
-            </div>
-            
-            
-            <div class = piggy_bank_instance>
-                <button class = delete_student_btn>
-                    <img src="../static/X_pig.png" alt="Delete Student Button">
-                </button>
-
-                <div class = piggy_bank_name>Student_name</div>
-
-                <button class = add_smile_btn>
-                    <img src="../static/PLUS_pig.png" alt="Add Smile Button">
-                </button>
-                <button class = remove_smile_btn>
-                    <img src="../static/MINUS_pig.png" alt="Remove Smile Button">
-                </button>
-            </div>
-            <div class = piggy_bank_instance>
-                <button class = delete_student_btn>
-                    <img src="../static/X_pig.png" alt="Delete Student Button">
-                </button>
-
-                <div class = piggy_bank_name>Student_name</div>
-
-                <button class = add_smile_btn>
-                    <img src="../static/PLUS_pig.png" alt="Add Smile Button">
-                </button>
-                <button class = remove_smile_btn>
-                    <img src="../static/MINUS_pig.png" alt="Remove Smile Button">
-                </button>
-            </div>
-            <div class = piggy_bank_instance>
-                <button class = delete_student_btn>
-                    <img src="../static/X_pig.png" alt="Delete Student Button">
-                </button>
-
-                <div class = piggy_bank_name>Student_name</div>
-
-                <button class = add_smile_btn>
-                    <img src="../static/PLUS_pig.png" alt="Add Smile Button">
-                </button>
-                <button class = remove_smile_btn>
-                    <img src="../static/MINUS_pig.png" alt="Remove Smile Button">
-                </button>
-            </div>
-            <div class = piggy_bank_instance>
-                <button class = delete_student_btn>
-                    <img src="../static/X_pig.png" alt="Delete Student Button">
-                </button>
-
-                <div class = piggy_bank_name>Student_name</div>
-
-                <button class = add_smile_btn>
-                    <img src="../static/PLUS_pig.png" alt="Add Smile Button">
-                </button>
-                <button class = remove_smile_btn>
-                    <img src="../static/MINUS_pig.png" alt="Remove Smile Button">
-                </button>
-            </div>
-            <div class = piggy_bank_instance>
-                <button class = delete_student_btn>
-                    <img src="../static/X_pig.png" alt="Delete Student Button">
-                </button>
-
-                <div class = piggy_bank_name>Student_name</div>
-
-                <button class = add_smile_btn>
-                    <img src="../static/PLUS_pig.png" alt="Add Smile Button">
-                </button>
-                <button class = remove_smile_btn>
-                    <img src="../static/MINUS_pig.png" alt="Remove Smile Button">
-                </button>
-            </div>
-            <div class = piggy_bank_instance>
-                <button class = delete_student_btn>
-                    <img src="../static/X_pig.png" alt="Delete Student Button">
-                </button>
-
-                <div class = piggy_bank_name>Student_name</div>
-
-                <button class = add_smile_btn>
-                    <img src="../static/PLUS_pig.png" alt="Add Smile Button">
-                </button>
-                <button class = remove_smile_btn>
-                    <img src="../static/MINUS_pig.png" alt="Remove Smile Button">
-                </button>
-            </div>
-
+            {% for student in students %}
+                <div class = piggy_bank_instance style = "background-image: url('../static/{{student.bank_colour}}.png');">
+                    <button class = delete_student_btn>
+                        <img src="../static/X_pig.png" alt="Delete Student Button">
+                    </button>
+                    <div class = piggy_bank_name>{{student.name}}</div>
+                    <div class = piggy_bank_smiles>{{student.smiles}}</div>
+                    <button class = add_smile_btn>
+                        <img src="../static/PLUS_pig.png" alt="Add Smile Button">
+                    </button>
+                    <button class = remove_smile_btn>
+                        <img src="../static/MINUS_pig.png" alt="Remove Smile Button">
+                    </button>
+                </div>
+            {% endfor %}
         </div>
 
     </main>
