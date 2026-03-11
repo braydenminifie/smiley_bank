@@ -1,3 +1,4 @@
+/* Header */
 header {
     overflow: hidden;
     background-color: #2e3235;
@@ -14,6 +15,7 @@ header {
     
 }
 
+/* Navigation Bar */
 .nav_bar {
     display: flex;
     padding: 15px;
@@ -109,6 +111,7 @@ header {
 }
 
 
+/* Piggy Bank Grid */
 .piggy_bank_grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);

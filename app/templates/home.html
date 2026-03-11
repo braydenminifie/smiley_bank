@@ -15,6 +15,7 @@
 
     <main>
 
+        <!-- Navigation Bar-->
         <div class = "nav_bar"> 
             <form class="search_bar" action="/search" method="get">
                 <input type="search" class="search_bar_input" placeholder = "Search...">
@@ -39,7 +40,7 @@
             </button>
         </div>
 
-
+        <!-- Piggy Bank Grid -->
         <div class = "piggy_bank_grid">
             {% for student in students %}
                 <div class = piggy_bank_instance style = "background-image: url('../static/{{student.bank_colour}}.png');">
