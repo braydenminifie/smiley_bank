@@ -48,8 +48,8 @@
                         <img src="../static/X_pig.png" alt="Delete Student Button">
                     </button>
                     <div class = piggy_bank_name>{{student.name}}</div>
-                    <div class = piggy_bank_smiles>{{student.smiles}}</div>
-                    <button class = add_smile_btn>
+                    <div class = piggy_bank_smiles id="smiles_{{student.student_id}}">{{student.smiles}}</div>
+                    <button class = add_smile_btn onclick = "addPoint({{student.student_id}})">
                         <img src="../static/PLUS_pig.png" alt="Add Smile Button">
                     </button>
                     <button class = remove_smile_btn>

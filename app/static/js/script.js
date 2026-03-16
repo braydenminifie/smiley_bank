@@ -33,3 +33,14 @@ create_student_btn.onclick = function() {
         console.log('Success:', data);
     });
 }
+
+//Add Point
+function addPoint(studentId) {
+    fetch(`/add_point/${studentId}`, {
+        method: 'POST'
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById(`smiles_${studentId}`).innerText = data.points;
+    });
+}
