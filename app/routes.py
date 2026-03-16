@@ -1,5 +1,6 @@
-from flask import Flask, render_template, Blueprint
+from flask import Flask, render_template, Blueprint, request, jsonify
 from . import services as services
+from app.database import Student
 
 home_blueprint = Blueprint("home", __name__)
 
@@ -8,3 +9,14 @@ def home():
     list_of_students = services.get_students()
     print(list_of_students)
     return render_template('home.html', students = list_of_students)
+
+@home_blueprint.route('/add_student', methods=['POST'])
+def add_student():
+    data = request.get_json()
+    name = data.get('name')
+    colour = data.get('colour')
+
+    student = Student(None, name, 0, colour)
+    services.add_student(student)
+
+    return jsonify({"status": "student added"})

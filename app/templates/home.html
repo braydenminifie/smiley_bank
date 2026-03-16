@@ -59,12 +59,57 @@
             {% endfor %}
             
             <div class = new_student>
-                <button class = add_new_student_btn></button>
+                <button id= add_new_student_btn></button>
                 <div class = new_student_text>+ Add New</div>
             </div>
 
         </div>
 
+        <!-- Modals -->
+        <div id = new_student_modal_background>
+            <div class = modal_content>
+                <div id = new_student_modal_header>New Student</div>
+                <div id = adding_details_text>ADDING DETAILS</div>
+                <div id = enter_name_section>
+                    <div id = enter_name_text>First Name</div>
+                    <div id = enter_name_input>
+                        <input type="text" id = enter_name_search_input>
+                    </div>
+                </div>
+
+                <div id = choose_bank_colour_section>
+                    <div id = choose_bank_colour_text>Bank Colour</div>
+                    <div id = piggy_bank_colours>
+                        <input type="radio" id="red" name="bank_options" value="red">
+                        <label for="red"><img src="../static/red.png"></label>
+
+                        <input type="radio" id="orange" name="bank_options" value="orange">
+                        <label for="orange"><img src="../static/orange.png"></label>
+
+                        <input type="radio" id="yellow" name="bank_options" value="yellow">
+                        <label for="yellow"><img src="../static/yellow.png"></label>
+
+                        <input type="radio" id="green" name="bank_options" value="green">
+                        <label for="green"><img src="../static/green.png"></label>
+
+                        <input type="radio" id="blue" name="bank_options" value="blue">
+                        <label for="blue"><img src="../static/blue.png"></label>
+
+                        <input type="radio" id="purple" name="bank_options" value="purple">
+                        <label for="purple"><img src="../static/purple.png"></label>
+                    </div>
+                </div>
+
+                <div id = add_leave_button_section>
+                    <button id = add_button>ADD</button>
+                    <button id = leave_button>LEAVE</button>
+                
+                </div>
+            </div>
+        </div>
     </main>
+
+    <!-- Javascript Link -->
+    <script src="../static/js/script.js"></script>
 </body>
 </html> 
