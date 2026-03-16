@@ -27,3 +27,10 @@ def add_point(student_id):
     student = services.get_student_by_id(student_id)[0]
 
     return {"points": student.smiles}
+
+@home_blueprint.route("/remove_point/<int:student_id>", methods=["POST"])
+def remove_point(student_id):
+    services.remove_smiles(student_id, 1)
+    student = services.get_student_by_id(student_id)[0]
+
+    return {"points": student.smiles}

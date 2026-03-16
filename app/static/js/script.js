@@ -44,3 +44,14 @@ function addPoint(studentId) {
         document.getElementById(`smiles_${studentId}`).innerText = data.points;
     });
 }
+
+//Remove Point
+function removePoint(studentId) {
+    fetch(`/remove_point/${studentId}`, {
+        method: 'POST'
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById(`smiles_${studentId}`).innerText = data.points;
+    });
+}
