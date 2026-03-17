@@ -34,6 +34,24 @@ create_student_btn.onclick = function() {
     });
 }
 
+//The Delete Student Modal
+var delete_student_modal = document.getElementById("delete_student_modal_background");
+let selected_student_id = null;
+
+function removeStudentModal(student_id) {
+    delete_student_modal.style.display = "block";
+    selected_student_id = student_id
+}
+
+function removeStudent() {
+    fetch(`/remove_student/${selected_student_id}`, {
+        method: 'POST'
+    })
+    .then(() => {
+        delete_student_modal.style.display = "none";
+    });
+}
+
 //Add Point
 function addPoint(studentId) {
     fetch(`/add_point/${studentId}`, {

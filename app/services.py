@@ -12,6 +12,12 @@ def add_student(student: Student):
     session.merge(student)
     session.commit()
 
+def remove_student_by_id(id: int):
+    print(f"removing student with id {id}")
+    student = session.query(Student).filter(Student.student_id == id).first()
+    session.delete(student)
+    session.commit()
+
 def add_smiles(student_id: int, smiles: int):
     student = session.query(Student).get(student_id)
     student.smiles += smiles
