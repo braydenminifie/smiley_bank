@@ -140,6 +140,7 @@ header {
     height: 20px;
     width: 20px;
     padding: 20px 0px 0px 10px;
+    transition-duration: 0.4s;
 }
 
 .delete_student_btn img {
@@ -183,6 +184,7 @@ header {
     padding: 0;
     width: 44px;
     height: 44px;
+    transition-duration: 0.4s;
 
     position: absolute;
     bottom: 0;
@@ -194,6 +196,10 @@ header {
     width: 20px;
 }
 
+.add_smile_btn:hover {
+    background-color: #179200;
+}
+
 .remove_smile_btn {
     background: none;
     background-color: #6e767e;
@@ -203,6 +209,7 @@ header {
     padding: 0;
     width: 44px;
     height: 44px;
+    transition-duration: 0.4s;
 
     position: absolute;
     bottom: 0;
@@ -212,6 +219,10 @@ header {
 .remove_smile_btn img {
     height: 10px;
     width: 20px;
+}
+
+.remove_smile_btn:hover {
+    background-color: #fe1112;
 }
 
 .new_student {
