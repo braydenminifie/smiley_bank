@@ -73,3 +73,53 @@ function removePoint(studentId) {
         document.getElementById(`smiles_${studentId}`).innerText = data.points;
     });
 }
+
+//The Store Modal
+var shop_modal = document.getElementById("store_modal_background");
+var open_shop_btn = document.getElementById("shop_btn")
+var close_shop_btn = document.getElementById("leave_store_modal_btn")
+
+open_shop_btn.onclick = function() {
+    shop_modal.style.display = "block";
+}
+
+close_shop_btn.onclick = function() {
+    shop_modal.style.display = "none";
+}
+
+function removePrize(prizeId) {
+    fetch(`/remove_prize/${prizeId}`, {
+        method: 'POST'
+    });
+}
+
+//The 'Add Prize' Modal
+var prize_modal = document.getElementById("create_prize_modal_background");
+var open_add_prize_btn = document.getElementById("new_store_modal_btn");
+var close_add_prize_btn = document.getElementById("leave_image_btn");
+
+
+open_add_prize_btn.onclick = function() {
+    prize_modal.style.display = "block";
+    shop_modal.style.display = "none";
+}
+
+close_add_prize_btn.onclick = function() {
+    prize_modal.style.display = "none";
+    shop_modal.style.display = "block";
+}
+
+var add_prize_btn = document.getElementById("add_image_btn");
+var add_prize_form = document.getElementById("create_prize_form")
+
+add_prize_form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const formData = new FormData(add_prize_form);
+    fetch(`/add_prize`, {
+        method: 'POST',
+        body: formData,
+    });
+
+
+});

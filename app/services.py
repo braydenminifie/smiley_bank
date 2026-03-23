@@ -1,4 +1,4 @@
-from .database import session, Student
+from .database import session, Student, Prize
 
 def get_students():
     students = session.query(Student).all()
@@ -28,4 +28,17 @@ def add_smiles(student_id: int, smiles: int):
 def remove_smiles(student_id: int, smiles: int):
     student = session.query(Student).get(student_id)
     student.smiles -= smiles
+    session.commit()
+
+def get_prizes():
+    prizes = session.query(Prize).all()
+    return prizes
+
+def add_prize(prize: Prize):
+    session.merge(prize)
+    session.commit()
+
+def remove_prize(id: int):
+    prize = session.query(Prize).filter(Prize.prize_id == id).first()
+    session.delete(prize)
     session.commit()

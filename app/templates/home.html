@@ -31,7 +31,7 @@
                 </div>
             </div>
 
-            <button class = shop_btn>
+            <button id = shop_btn>
                 <img src = "../static/STORE.png" alt="Store Button">
             </button>
 
@@ -122,6 +122,57 @@
 
             </div>
 
+        </div>
+
+        <div id = store_modal_background>
+            <div class="modal_content">
+                <div id = store_modal_header>The Store</div>
+                <div id = store_modal_items>
+                    {% for prize in prizes%}
+                    <div class = prize_instance style = "background-image: url('../static/prizes/{{prize.image}}');">
+                        <button class = delete_student_btn onclick = "removePrize({{prize.prize_id}})">
+                            <img src="../static/X_pig.png" alt="Delete Prize Button">
+                        </button>
+                        <div class = prize_name>{{prize.prize}}</div>
+                        <div class = prize_cost_container>
+                            <div class = prize_cost_text>{{prize.cost}}</div>
+                            <img src="../static/smiley_coin.png">
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div id = store_modal_buttons>
+                    <button id = new_store_modal_btn>ADD</button>
+                    <button id = leave_store_modal_btn>LEAVE</button>
+                </div>
+            </div>
+        </div>
+
+        <div id = create_prize_modal_background>
+            <div class = "modal_content">
+                <div id = create_prize_modal_header>New Prize</div>
+                <div class = adding_details_text>ADDING DETAILS</div>
+                <form id = create_prize_form>
+                    <div id = prize_name_section>
+                        PRIZE NAME
+                        <br>
+                        <input type="text" id = "prizeNameInput" name = "prizeNameInput">
+                    </div>
+                    <div id = prize_cost_section>
+                        COST
+                        <br>
+                        <input type="text" id = "prizeCostInput" name = "prizeCostInput">
+                    </div>
+                    <div id = prize_image_section>
+                        INSERT IMAGE
+                        <input type="file" id = "prizeImageUpload" name="prizeImageUpload" accept="image/*">
+                    </div>
+                    <div id="prize_btn_section">
+                        <input type="submit" value="ADD" id="add_image_btn">
+                        <button type="button" id="leave_image_btn">LEAVE</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </main>
 

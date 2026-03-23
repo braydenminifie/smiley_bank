@@ -21,6 +21,21 @@ class Student(Base):
     def __repr__(self):
         return f"({self.student_id}, {self.name}, {self.smiles}, {self.bank_colour})"
 
+class Prize(Base):
+    __tablename__ = 'prizes'
+    prize_id = Column(Integer, Sequence('prize_id_seq'), primary_key = True)
+    prize = Column(String)
+    cost = Column(Integer)
+    image = Column(String)
+
+    def __init__(self, prize_id: int, prize: str, cost: int, image: str):
+        self.prize_id = prize_id
+        self.prize = prize
+        self.cost = cost
+        self.image = image
+
+    def __repr__(self):
+        return f"({self.prize_id}, {self.prize}, {self.cost}, {self.image})"
 
 def init_db():
     Base.metadata.create_all(engine)
