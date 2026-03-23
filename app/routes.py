@@ -22,7 +22,12 @@ def add_student():
     student = Student(None, name, 0, colour)
     services.add_student(student)
 
-    return jsonify({"status": "student added"})
+    return jsonify({
+        "student_id": student.student_id,
+        "name": student.name,
+        "bank_colour": student.bank_colour,
+        "smiles": student.smiles
+    })
 
 @home_blueprint.route("/add_point/<int:student_id>", methods=["POST"])
 def add_point(student_id):

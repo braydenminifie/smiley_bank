@@ -30,8 +30,41 @@ create_student_btn.onclick = function() {
     .then(response => response.json())
     .then(data => {
         create_student_modal.style.display = "none";
+        addStudentToGrid(data);
         console.log('Success:', data);
     });
+}
+
+function addStudentToGrid(student) { //Dynamically add student to grid (without refreshing the page)
+    const grid = document.querySelector(".piggy_bank_grid");
+
+    const div = document.createElement("div");
+    div.className = "piggy_bank_instance";
+
+    div.style.backgroundImage = `url('../static/${student.bank_colour}.png')`;
+
+    div.innerHTML = `
+        <button class="delete_student_btn" onclick="removeStudentModal(${student.student_id})">
+            <img src="../static/X_pig.png">
+        </button>
+
+        <div class="piggy_bank_name">${student.name}</div>
+
+        <div class="piggy_bank_smiles" id="smiles_${student.student_id}">
+            ${student.smiles}
+        </div>
+
+        <button class="add_smile_btn" onclick="addPoint(${student.student_id})">
+            <img src="../static/PLUS_pig.png">
+        </button>
+
+        <button class="remove_smile_btn" onclick="removePoint(${student.student_id})">
+            <img src="../static/MINUS_pig.png">
+        </button>
+    `;
+
+    const addNew = document.querySelector(".new_student");
+    grid.insertBefore(div, addNew);
 }
 
 //The Delete Student Modal
