@@ -37,6 +37,11 @@ create_student_btn.onclick = function() {
 //The Delete Student Modal
 var delete_student_modal = document.getElementById("delete_student_modal_background");
 let selected_student_id = null;
+var leave_delete_student_modal_btn = document.getElementById("leave_del_student_button")
+
+leave_delete_student_modal_btn.onclick = function() {
+    delete_student_modal.style.display = "none";
+}
 
 function removeStudentModal(student_id) {
     delete_student_modal.style.display = "block";
