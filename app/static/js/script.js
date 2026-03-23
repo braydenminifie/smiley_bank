@@ -110,7 +110,7 @@ close_add_prize_btn.onclick = function() {
 }
 
 var add_prize_btn = document.getElementById("add_image_btn");
-var add_prize_form = document.getElementById("create_prize_form")
+var add_prize_form = document.getElementById("create_prize_form");
 
 add_prize_form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -123,3 +123,17 @@ add_prize_form.addEventListener("submit", function (event) {
 
 
 });
+
+
+//The History Modal
+var history_modal = document.getElementById("history_modal_background");
+var open_history_btn = document.getElementById("history_btn");
+var leave_history_btn = document.getElementById("leave_history_btn");
+
+open_history_btn.onclick = function() {
+    history_modal.style.display = "block";
+}
+
+leave_history_btn.onclick = function() {
+    history_modal.style.display = "none";
+}

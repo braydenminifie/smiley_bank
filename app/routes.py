@@ -10,9 +10,8 @@ home_blueprint = Blueprint("home", __name__)
 def home():
     list_of_students = services.get_students()
     list_of_prizes = services.get_prizes()
-    print(list_of_students)
-    print(list_of_prizes)
-    return render_template('home.html', students = list_of_students, prizes = list_of_prizes)
+    list_of_history = services.get_history()
+    return render_template('home.html', students = list_of_students, prizes = list_of_prizes, history = list_of_history)
 
 @home_blueprint.route('/add_student', methods=['POST'])
 def add_student():

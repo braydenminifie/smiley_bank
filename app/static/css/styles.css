@@ -97,7 +97,7 @@ header {
     height: 25px;
 }
 
-.history_btn {
+#history_btn {
     background: none;
     background-color: #6e767e;
     border-radius: 50%;
@@ -111,7 +111,7 @@ header {
     
 }
 
-.history_btn img {
+#history_btn img {
     width: 30px;
     height: 30px;
 }
@@ -407,7 +407,8 @@ header {
 .modal_content {
     background-color: #fefefe;
     width: 50%; 
-    margin: 15% auto;
+    margin: 5% auto;
+    max-height: 80vh;
 
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -806,5 +807,111 @@ header {
 }
 
 #leave_image_btn:hover {
+    background-color: #fe1112;
+}
+
+
+
+#history_modal_background {
+    border: 2px solid black;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.4); 
+    display: none;
+}
+
+#history_modal_header {
+    background-color: #2e3235;
+    color: #fcfdfe;
+    font-family: "marvin", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.5rem;
+    padding: 15px 10px 15px 30px;
+
+    grid-row: 1;
+    grid-column: 1/3;
+}
+
+#history_modal_nav_bar {
+    grid-row: 2;
+    grid-column: 1/3;
+    display: flex;
+    padding: 15px;
+    gap: 10px;
+}
+
+.history_modal_body {
+    grid-row: 3;
+    grid-column: 1/3;
+    padding: 10px;
+
+    overflow-y: auto;
+    max-height: 55vh;
+}
+
+#history_modal_body_table {
+    color: #2e3235;
+    font-family: "dm-sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+
+    border-collapse: collapse;
+    border: 8px solid #adb7be;
+    margin: 0 auto;
+}
+
+#history_modal_body_table th{
+    background-color: #dde2e6;
+    padding: 10px;
+    text-align: left;
+
+    border: 8px solid #adb7be;
+}
+
+#history_modal_body_table td {
+    padding: 10px 80px 10px 10px;
+
+    border-left: 8px solid #adb7be;
+    border-right: 8px solid #adb7be;
+}
+
+#history_modal_body_table tr:nth-child(even) {
+    background-color: #eceff2;
+}
+
+#history_modal_body_table tr:hover {
+    background-color: #dbdee0;
+}
+
+#leave_history_btn {
+    background: none;
+    background-color: #6e767e;
+    color: #fcfdfe;
+    transition-duration: 0.4s;
+    border-radius: 30px;
+    border: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    justify-self: end;
+    align-items: center;
+    width: 20%;
+
+    font-family: "dm-sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+    padding: 5px;
+    margin: 20px 20px 20px 5px;
+
+    grid-column: 2;
+}
+
+#leave_history_btn:hover {
     background-color: #fe1112;
 }
