@@ -281,3 +281,26 @@ function searchStudentsByName(event) {
         }
     })
 }
+
+
+//History Grid Search Filter
+function searchTableByColumn(event) {
+    const searchInput = event.target.value.trim().toLowerCase();
+    const table = document.getElementById("history_modal_body_table");
+    const rows = table.querySelectorAll("tr");
+    console.log(searchInput)
+
+    rows.forEach((row, index) => {
+        if (index === 0) return;
+        const cell = row.children[1];
+        if (!cell) return;
+
+        const text = cell.innerText.toLowerCase();
+        console.log(text)
+        if (text.includes(searchInput)) {
+            row.style.display = "";
+        } else {
+            row.style.display = "none";
+        }
+    });
+}

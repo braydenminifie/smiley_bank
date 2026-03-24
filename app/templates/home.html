@@ -179,18 +179,11 @@
 
                 <div id = history_modal_nav_bar>
 
-                    <form class="search_bar" action="/search" method="get">
-                        <input type="search" class="search_bar_input" placeholder = "Search...">
+                    <form class="search_bar" method="get">
+                        <input type="search" class="search_bar_input" placeholder = "Search..." 
+                        oninput="searchTableByColumn(event)">
                     </form>
 
-                    <div class = "drop_down">
-                        <button class = "drop_down_btn">-</button>
-                        <div class="drop_down_content">
-                            <a href="#">Link 1</a>
-                            <a href="#">Link 2</a>
-                            <a href="#">Link 3</a>
-                        </div>
-                    </div>
                 </div>
 
                 <div class = history_modal_body>
