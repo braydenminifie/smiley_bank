@@ -19,8 +19,6 @@ def remove_student_by_id(id: int):
     session.delete(student)
     session.commit()
 
-    history = History(None, student.student_id, get_date(), student.name, "Profile Removed", None)
-    add_history(history)
 
 def add_smiles(student_id: int, smiles: int):
     student = session.query(Student).get(student_id)
@@ -54,7 +52,6 @@ def add_history(history: History):
         History.action == history.action
     ).first()
 
-    
     if potential_entry:
         potential_entry.points += history.points
         session.commit()

@@ -91,6 +91,7 @@ function removeStudent() {
     .then((data) => {
         removeStudentFromGrid(data)
         delete_student_modal.style.display = "none";
+        addHistoryRow(data.history)
     });
 }
 
