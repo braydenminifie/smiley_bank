@@ -211,7 +211,7 @@
                             <th>POINTS</th>
                         </tr>
                         {% for item in history %}
-                        <tr>
+                        <tr data-history-id="{{ item.history_id }}">
                             <td>{{ item.date }}</td>
                             <td>{{ item.name}}</td>
                             <td>{{ item.action }}</td>

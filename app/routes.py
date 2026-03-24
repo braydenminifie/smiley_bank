@@ -1,6 +1,6 @@
 from flask import Flask, render_template, Blueprint, request, jsonify
 from . import services as services
-from app.database import Student, Prize
+from app.database import Student, Prize, History
 from werkzeug.utils import secure_filename
 import os
 
@@ -34,7 +34,18 @@ def add_point(student_id):
     services.add_smiles(student_id, 1)
     student = services.get_student_by_id(student_id)[0]
 
-    return {"points": student.smiles}
+    history = History(None, student_id, services.get_date(), student.name, "Add", 1)
+    history = services.add_history(history)
+
+    return jsonify({"points": student.smiles,
+                    "history": {
+                        "history_id": history.history_id,
+                        "student_id": history.student_id,
+                        "date": history.date,
+                        "name": history.name,
+                        "action": history.action,
+                        "points": history.points,
+                    }})
 
 @home_blueprint.route("/remove_point/<int:student_id>", methods=["POST"])
 def remove_point(student_id):

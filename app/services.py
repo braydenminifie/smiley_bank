@@ -29,8 +29,6 @@ def add_smiles(student_id: int, smiles: int):
     student.smiles += smiles
     session.commit()
     
-    history = History(None, student_id, get_date(), student.name, "Add", smiles)
-    add_history(history)
 
 def remove_smiles(student_id: int, smiles: int):
     student = session.query(Student).get(student_id)
@@ -63,11 +61,14 @@ def add_history(history: History):
     
     if potential_entry:
         potential_entry.points += history.points
+        session.commit()
+        return potential_entry
 
     else:
-        session.merge(history)
-
-    session.commit()
+        session.add(history)
+        session.commit()
+        return history
+    
 
 def get_history():
     history = session.query(History).all()

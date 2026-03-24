@@ -110,6 +110,7 @@ function addPoint(studentId) {
     .then(response => response.json())
     .then(data => {
         document.getElementById(`smiles_${studentId}`).innerText = data.points;
+        addHistoryRow(data.history)
     });
 }
 
@@ -122,6 +123,39 @@ function removePoint(studentId) {
     .then(data => {
         document.getElementById(`smiles_${studentId}`).innerText = data.points;
     });
+}
+
+//Dynamically Add History Row
+function addHistoryRow(entry) {
+    const table = document.querySelector("#history_modal_body_table");
+    const row = document.createElement("tr");
+    row.setAttribute("data-history-id", entry.history_id);
+    const tbody = document.querySelector("#history_modal_body_table tbody");
+    const existingRow = document.querySelector(`#history_modal_body_table tr[data-history-id="${entry.history_id}"]`);
+    
+    if (existingRow) {
+        existingRow.innerHTML = `
+        <td>${entry.date}</td>
+        <td>${entry.name}</td>
+        <td>${entry.action}</td>
+        <td>${entry.points}</td>
+        `;
+    } else {
+        row.innerHTML = `
+        <td>${entry.date}</td>
+        <td>${entry.name}</td>
+        <td>${entry.action}</td>
+        <td>${entry.points}</td>
+        `;
+
+        if (tbody.children.length >= 1) {
+            tbody.insertBefore(row, tbody.children[1]);
+        } else {
+            tbody.appendChild(row);
+        }
+    }
+
+    
 }
 
 //The Store Modal
@@ -202,7 +236,7 @@ function addPrizeToGrid(prize) {
     div.className = "prize_instance";
     div.style.backgroundImage = `url('../static/prizes/${prize.image}')`;
     div.setAttribute("data-prize-id", prize.prize_id);
-    
+
     div.innerHTML = `
         <button class = delete_student_btn onclick = "removePrize(${prize.prize_id})">
         <img src="../static/X_pig.png" alt="Delete Prize Button">
