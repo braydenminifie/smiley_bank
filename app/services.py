@@ -13,8 +13,6 @@ def add_student(student: Student):
     session.add(student)
     session.commit()
 
-    history = History(None, student.student_id, get_date(), student.name, "Profile Added", None)
-    add_history(history)
 
 def remove_student_by_id(id: int):
     student = session.query(Student).filter(Student.student_id == id).first()

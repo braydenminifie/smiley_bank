@@ -31,6 +31,7 @@ create_student_btn.onclick = function() {
     .then(data => {
         create_student_modal.style.display = "none";
         addStudentToGrid(data);
+        addHistoryRow(data.history)
         console.log('Success:', data);
     });
 }
@@ -140,14 +141,14 @@ function addHistoryRow(entry) {
         <td>${entry.date}</td>
         <td>${entry.name}</td>
         <td>${entry.action}</td>
-        <td>${entry.points}</td>
+        <td>${entry.points || ""}</td>
         `;
     } else {
         row.innerHTML = `
         <td>${entry.date}</td>
         <td>${entry.name}</td>
         <td>${entry.action}</td>
-        <td>${entry.points}</td>
+        <td>${entry.points || ""}</td>
         `;
 
         if (tbody.children.length >= 1) {

@@ -22,11 +22,22 @@ def add_student():
     student = Student(None, name, 0, colour)
     services.add_student(student)
 
+    history = History(None, student.student_id, services.get_date(), student.name, "Profile Added", None)
+    services.add_history(history)
+
     return jsonify({
         "student_id": student.student_id,
         "name": student.name,
         "bank_colour": student.bank_colour,
-        "smiles": student.smiles
+        "smiles": student.smiles,
+        "history": {
+                "history_id": history.history_id,
+                "student_id": history.student_id,
+                "date": history.date,
+                "name": history.name,
+                "action": history.action,
+                "points": history.points,
+                    }
     })
 
 @home_blueprint.route("/add_point/<int:student_id>", methods=["POST"])
