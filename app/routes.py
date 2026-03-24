@@ -41,12 +41,16 @@ def remove_point(student_id):
     services.remove_smiles(student_id, 1)
     student = services.get_student_by_id(student_id)[0]
 
-    return {"points": student.smiles}
+    return jsonify({
+        "student_id": student.student_id,
+    })
 
 @home_blueprint.route("/remove_student/<int:student_id>", methods = ["POST"])
 def remove_student(student_id):
     services.remove_student_by_id(student_id)
-    return {"status": "removed"}
+    return jsonify({
+        "student_id": student_id,
+    })
 
 @home_blueprint.route("/remove_prize/<int:prize_id>", methods = ["POST"])
 def remove_prize(prize_id):

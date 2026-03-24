@@ -42,6 +42,7 @@ function addStudentToGrid(student) { //Dynamically add student to grid (without 
     div.className = "piggy_bank_instance";
 
     div.style.backgroundImage = `url('../static/${student.bank_colour}.png')`;
+    div.setAttribute("data-student-id", student.student_id);
 
     div.innerHTML = `
         <button class="delete_student_btn" onclick="removeStudentModal(${student.student_id})">
@@ -85,9 +86,20 @@ function removeStudent() {
     fetch(`/remove_student/${selected_student_id}`, {
         method: 'POST'
     })
-    .then(() => {
+    .then(result => result.json()) 
+    .then((data) => {
+        removeStudentFromGrid(data)
         delete_student_modal.style.display = "none";
     });
+}
+
+function removeStudentFromGrid(student_obj) {
+    const id = student_obj.student_id
+    const studentCard = document.querySelector(`.piggy_bank_instance[data-student-id="${id}"]`);
+
+    if (studentCard) {
+        studentCard.remove();
+    }
 }
 
 //Add Point

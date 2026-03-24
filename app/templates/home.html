@@ -43,7 +43,10 @@
         <!-- Piggy Bank Grid -->
         <div class = "piggy_bank_grid">
             {% for student in students %}
-                <div class = piggy_bank_instance style = "background-image: url('../static/{{student.bank_colour}}.png');">
+                <div class="piggy_bank_instance"
+                    style="background-image: url('../static/{{ student.bank_colour }}.png');"
+                    data-student-id="{{ student.student_id }}">
+                    
                     <button class = delete_student_btn onclick = "removeStudentModal({{student.student_id}})">
                         <img src="../static/X_pig.png" alt="Delete Student Button">
                     </button>
