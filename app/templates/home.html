@@ -17,19 +17,10 @@
 
         <!-- Navigation Bar-->
         <div class = "nav_bar"> 
-            <form class="search_bar" action="/search" method="get">
-                <input type="search" class="search_bar_input" placeholder = "Search...">
+            <form class="search_bar" method="get">
+                <input type="search" class="search_bar_input" placeholder = "Search..."
+                oninput="searchStudentsByName(event)">
             </form>
-            
-
-            <div class = "drop_down">
-                <button class = "drop_down_btn">-</button>
-                <div class="drop_down_content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div>
-            </div>
 
             <button id = shop_btn>
                 <img src = "../static/STORE.png" alt="Store Button">
@@ -41,7 +32,7 @@
         </div>
 
         <!-- Piggy Bank Grid -->
-        <div class = "piggy_bank_grid">
+        <div class = "piggy_bank_grid" id = piggy_bank_grid>
             {% for student in students %}
                 <div class="piggy_bank_instance"
                     style="background-image: url('../static/{{ student.bank_colour }}.png');"

@@ -267,3 +267,17 @@ open_history_btn.onclick = function() {
 leave_history_btn.onclick = function() {
     history_modal.style.display = "none";
 }
+
+//PiggyBank Grid Search Filter
+function searchStudentsByName(event) {
+    const searchInput = event.target.value.trim().toLowerCase();
+    const listInstances = document.querySelectorAll(".piggy_bank_instance");
+
+    listInstances.forEach(function(item) {
+        item.style.display = 'block';
+
+        if (!item.innerText.toLowerCase().includes(searchInput)) {
+            item.style.display='none';
+        }
+    })
+}

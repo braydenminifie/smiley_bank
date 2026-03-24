@@ -47,30 +47,6 @@ header {
 }
 
 
-.drop_down_btn {
-    background-color: #6e767e;
-    color: #fcfdfe;
-    font-size: 20px;
-    padding: 10px;
-    border: none;
-    border-radius: 30px;
-    text-align: left;
-    min-width: 200px;
-
-    background-image: url('../FILTER.png');
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
-    padding-left: 50px;
-    background-size: 25px;
-}
-
-.drop_down_content {
-    display: none;
-    position: absolute;
-    background-color: #6e767e;
-    min-width: 200px;
-}
-
 
 #shop_btn {
     background: none;
