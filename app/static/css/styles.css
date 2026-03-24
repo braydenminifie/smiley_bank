@@ -108,7 +108,11 @@ header {
     align-items: center;
     width: 44px;
     height: 44px;
-    
+    transition-duration: 0.4s;
+}
+
+#history_btn:hover {
+    background-color: #2e3235
 }
 
 #history_btn img {
