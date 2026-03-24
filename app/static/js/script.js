@@ -121,7 +121,9 @@ function removePoint(studentId) {
     })
     .then(response => response.json())
     .then(data => {
+        console.log(data)
         document.getElementById(`smiles_${studentId}`).innerText = data.points;
+        addHistoryRow(data.history)
     });
 }
 

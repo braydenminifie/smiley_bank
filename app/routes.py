@@ -52,9 +52,21 @@ def remove_point(student_id):
     services.remove_smiles(student_id, 1)
     student = services.get_student_by_id(student_id)[0]
 
+    history = History(None, student_id, services.get_date(), student.name, "Remove", 1)
+    history = services.add_history(history)
+
     return jsonify({
         "student_id": student.student_id,
-    })
+        "points": student.smiles,
+        "history": {
+                    "history_id": history.history_id,
+                    "student_id": history.student_id,
+                    "date": history.date,
+                    "name": history.name,
+                    "action": history.action,
+                    "points": history.points,
+                }})
+  
 
 @home_blueprint.route("/remove_student/<int:student_id>", methods = ["POST"])
 def remove_student(student_id):

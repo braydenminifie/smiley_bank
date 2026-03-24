@@ -35,8 +35,6 @@ def remove_smiles(student_id: int, smiles: int):
     student.smiles -= smiles
     session.commit()
 
-    history = History(None, student_id, get_date(), student.name, "Remove", smiles)
-    add_history(history)
 
 def get_prizes():
     prizes = session.query(Prize).all()
