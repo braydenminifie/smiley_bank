@@ -70,8 +70,12 @@ def add_prize():
     folder = "app/static/prizes"
     os.makedirs(folder, exist_ok=True)
     file.save(os.path.join(folder, filename))
-    print("Photo Added!")
 
     services.add_prize(prize)
 
-    return jsonify({"status": "prize added"})
+    return jsonify({
+        "prize_id": prize.prize_id,
+        "prize": prize.prize,
+        "cost": prize.cost,
+        "image": prize.image,
+    })

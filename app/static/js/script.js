@@ -169,10 +169,37 @@ add_prize_form.addEventListener("submit", function (event) {
     fetch(`/add_prize`, {
         method: 'POST',
         body: formData,
+    })
+    .then(result => result.json()) 
+    .then((data) => {
+        console.log('then section running...')
+        addPrizeToGrid(data)
+        prize_modal.style.display = "none";
+        shop_modal.style.display = "block";
     });
 
 
 });
+
+function addPrizeToGrid(prize) {
+    console.log('add prize to grid function called');
+    const grid = document.querySelector("#store_modal_items");
+    console.log(grid);
+    const div = document.createElement("div");
+    div.className = "prize_instance";
+    div.style.backgroundImage = `url('../static/prizes/${prize.image}')`;
+    div.innerHTML = `
+        <button class = delete_student_btn onclick = "removePrize(${prize.prize_id})">
+        <img src="../static/X_pig.png" alt="Delete Prize Button">
+        </button>
+        <div class = prize_name>${prize.prize}</div>
+        <div class = prize_cost_container>
+        <div class = prize_cost_text>${prize.cost}</div>
+        <img src="../static/smiley_coin.png">
+    `;
+
+    grid.appendChild(div);
+}
 
 
 //The History Modal

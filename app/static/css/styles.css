@@ -408,7 +408,7 @@ header {
     background-color: #fefefe;
     width: 50%; 
     margin: 5% auto;
-    max-height: 80vh;
+    max-height: 85vh;
 
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -576,6 +576,8 @@ header {
     padding: 30px;
     grid-column: 1/3;
 
+    overflow-y: auto;
+    max-height: 65vh;
     justify-content: space-around;
 }
 
