@@ -46,7 +46,7 @@
                 <div class="piggy_bank_instance"
                     style="background-image: url('../static/{{ student.bank_colour }}.png');"
                     data-student-id="{{ student.student_id }}">
-                    
+
                     <button class = delete_student_btn onclick = "removeStudentModal({{student.student_id}})">
                         <img src="../static/X_pig.png" alt="Delete Student Button">
                     </button>
@@ -132,7 +132,9 @@
                 <div id = store_modal_header>The Store</div>
                 <div id = store_modal_items>
                     {% for prize in prizes%}
-                    <div class = prize_instance style = "background-image: url('../static/prizes/{{prize.image}}');">
+                    <div class = prize_instance 
+                    style = "background-image: url('../static/prizes/{{prize.image}}');"
+                    data-prize-id="{{ prize.prize_id }}">
                         <button class = delete_student_btn onclick = "removePrize({{prize.prize_id}})">
                             <img src="../static/X_pig.png" alt="Delete Prize Button">
                         </button>

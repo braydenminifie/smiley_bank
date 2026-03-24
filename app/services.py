@@ -45,7 +45,7 @@ def get_prizes():
     return prizes
 
 def add_prize(prize: Prize):
-    session.merge(prize)
+    session.add(prize)
     session.commit()
 
 def remove_prize(id: int):

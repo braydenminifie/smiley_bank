@@ -140,7 +140,20 @@ close_shop_btn.onclick = function() {
 function removePrize(prizeId) {
     fetch(`/remove_prize/${prizeId}`, {
         method: 'POST'
+    })
+    .then(result => result.json()) 
+    .then((data) => {
+        removePrizeFromGrid(data)
     });
+}
+
+function removePrizeFromGrid(prize_obj) {
+    const id = prize_obj.prize_id
+    const prizeCard = document.querySelector(`.prize_instance[data-prize-id="${id}"]`);
+
+    if (prizeCard) {
+        prizeCard.remove();
+    }
 }
 
 //The 'Add Prize' Modal
@@ -188,6 +201,8 @@ function addPrizeToGrid(prize) {
     const div = document.createElement("div");
     div.className = "prize_instance";
     div.style.backgroundImage = `url('../static/prizes/${prize.image}')`;
+    div.setAttribute("data-prize-id", prize.prize_id);
+    
     div.innerHTML = `
         <button class = delete_student_btn onclick = "removePrize(${prize.prize_id})">
         <img src="../static/X_pig.png" alt="Delete Prize Button">
