@@ -897,3 +897,19 @@ header {
 #leave_history_btn:hover {
     background-color: #fe1112;
 }
+
+body {
+    margin: 0;
+    background-image: url("../background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.page_wrapper {
+    max-width: 90%;
+    margin: 40px auto;     
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
