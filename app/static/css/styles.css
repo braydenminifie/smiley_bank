@@ -2,7 +2,15 @@
 header {
     overflow: hidden;
     background-color: #2e3235;
+    display: flex;
     
+}
+
+#top_right_x {
+    height: 40px;
+    width: 40px;
+    margin-left: auto;
+    padding: 30px;
 }
 
 .heading {
@@ -265,7 +273,6 @@ body {
     max-width: 90%;
     margin: 40px auto;     
     background-color: white;
-    padding: 20px;
     border-radius: 10px;
 
 }
